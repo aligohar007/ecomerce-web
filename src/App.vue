@@ -1,13 +1,15 @@
 <template>
-   <h1 class="text-3xl font-semibold  text-white bg-red-600">
-    Hello world!
-  </h1>
+<div class="overflow-hidden">
+  <Navbar/>
+</div>
 </template>
 
-<script setup>
 
+<script setup>
+import Navbar from './components/Navbar.vue'
 </script>
 
-<style scoped>
+<style scopeds>
 
 </style>
+
