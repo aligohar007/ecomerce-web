@@ -1,5 +1,5 @@
 <template>
-   <h1 class="text-3xl font-bold  text-white bg-red-600">
+   <h1 class="text-3xl font-semibold  text-white bg-red-600">
     Hello world!
   </h1>
 </template>
