@@ -1,20 +1,20 @@
 <template>
   <section>
     <!-- Navbar -->
-    <div class="w-full flex justify-center items-center bg-white  shadow-xl">
+    <div class="w-full flex justify-center items-center bg-white shadow-xl py-2">
       <nav>
         <ul class="flex text-black gap-10 font-semibold">
-          <li>Home</li>
-          <li>Top Rated</li>
-          <li>Kids Wear</li>
-          <li>Mens Wear</li>
-          <li>Electronics</li>
-
-          <li class="relative group cursor-pointer flex items-center gap-1">
+          <!-- Main Links -->
+          <li
+            v-for="(link, index) in navLinks"
+            :key="index"
+            class="relative group cursor-pointer flex items-center gap-1"
+          >
             <span class="flex items-center gap-1">
-              Trending Products
-              <!-- Down Arrow Icon -->
+              {{ link.name }}
+
               <svg
+                v-if="link.dropdown"
                 class="w-4 h-4 text-black font-semibold transition-transform duration-300 group-hover:rotate-180"
                 fill="none"
                 stroke="currentColor"
@@ -27,14 +27,18 @@
 
             <!-- Dropdown Menu -->
             <ul
-              class="absolute left-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg 
+              v-if="link.dropdown"
+              class="absolute left-0 top-full mt-4 w-48 bg-white rounded-lg shadow-lg 
               opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
-              transition-all duration-300 ease-out"
+              transition-all duration-300 ease-out z-30"
             >
-              <li class="px-4 py-2 hover:bg-[#fea928] hover:text-white">Smartphones</li>
-              <li class="px-4 py-2 hover:bg-[#fea928] hover:text-white">Laptops</li>
-              <li class="px-4 py-2 hover:bg-[#fea928] hover:text-white">Shoes</li>
-              <li class="px-4 py-2 hover:bg-[#fea928] hover:text-white">Accessories</li>
+              <li
+                v-for="(item, subIndex) in link.dropdown"
+                :key="subIndex"
+                class="px-4 py-2 hover:bg-[#fea928]/40 hover:text-white"
+              >
+                {{ item }}
+              </li>
             </ul>
           </li>
         </ul>
@@ -44,6 +48,30 @@
 </template>
 
 <script setup>
+</script>
+
+<style scoped>
+</style>
+
+
+<script setup>
+ const navLinks = [
+  { name: "Home" },
+  { name: "Top Rated" },
+  { name: "Kids Wear" },
+  { name: "Mens Wear" },
+  { name: "Electronics" },
+  {
+    name: "Trending Products",
+    dropdown: [
+      "Smartphones",
+      "Laptops",
+      "Shoes",
+      "Accessories"
+    ]
+  }
+];
+
 </script>
 
 <style scoped>
