@@ -1,14 +1,13 @@
 <template>
-<div class="">
-  <Navbar/>
-  <HeroSection/>
-</div>
+  <TopHeader/>
+  <Navbarlist/>
 </template>
 
 
 <script setup>
-import HeroSection from './components/HeroSection.vue';
-import Navbar from './components/Navbar.vue'
+import Navbarlist from './components/Navbarlist.vue';
+import TopHeader from './components/TopHeader.vue';
+
 </script>
 
 <style scopeds>
