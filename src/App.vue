@@ -5,12 +5,14 @@
   <Products/>
   <Topratedproducts/>
   <Wintersale/>
+  <NewProduct/>
 </template>
 
 
 <script setup>
 import HeroSection from './components/HeroSection.vue';
 import Navbarlist from './components/Navbarlist.vue';
+import NewProduct from './components/NewProduct.vue';
 import Products from './components/Products.vue';
 import TopHeader from './components/TopHeader.vue';
 import Topratedproducts from './components/Topratedproducts.vue';
