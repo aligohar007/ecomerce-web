@@ -1,9 +1,9 @@
 <template>
   <section>
-    <!-- Navbar -->
-    <div class="w-full flex justify-center items-center bg-white shadow-xl py-2">
-      <nav>
-        <ul class="flex text-black gap-10 font-semibold">
+    <!-- Navbar start -->
+    <div class="w-full text-center flex justify-center   items-center bg-[#fea928]/40 lg:bg-white shadow-xl py-2">
+      <nav class="hidden lg:block  ">
+        <ul class="flex text-black  gap-10 font-semibold">
           <!-- Main Links -->
           <li
             v-for="(link, index) in navLinks"
@@ -44,6 +44,7 @@
         </ul>
       </nav>
     </div>
+    <!-- Navbar Closed  -->
   </section>
 </template>
 

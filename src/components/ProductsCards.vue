@@ -1,9 +1,9 @@
 <template>
   <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-200">
     <!-- Image -->
-    <div class="w-full h-44 sm:h-48 lg:h-40 overflow-hidden">
+    <div class="w-full h-48 sm:h-48 lg:h-40 overflow-hidden">
       <img :src="card.img" :alt="card.title"
-        class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-400" />
+        class="w-full h-full object-cover bg-center transform hover:scale-105 transition-transform duration-400" />
     </div>
 
     <!-- Content -->
@@ -52,10 +52,12 @@
 </template>
 
 <script setup>
+
 defineProps({
   card: {
     type: Object,
     required: true
   }
 });
+
 </script>

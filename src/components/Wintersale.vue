@@ -1,6 +1,6 @@
 
 <template>
-  <section class=" py-12 px-10">
+  <section class=" py-2 px-10 lg:py-12">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 px-6">
       <!-- Left Side Image -->
       <div class="flex justify-center ">
@@ -76,4 +76,3 @@
 <style scoped>
 /* optional custom styles */
 </style>
-```
