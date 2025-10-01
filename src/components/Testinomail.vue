@@ -50,6 +50,7 @@
 </template>
 
 <script setup>
+
 import { ref, onMounted, onUnmounted, computed } from "vue";
 import { testimonials } from "../data/testinomail";
 
@@ -57,7 +58,18 @@ const currentIndex = ref(0);
 const chunkSize = ref(3);
  let interval = null;
 
+const updateChunkSize = ()=>{
+          if(window.innerWidth < 768){
+            chunkSize.value = 1;
+          }
+          else if(window.innerWidth < 1024){
+            chunkSize.value = 2;
+          }
+          else {
+               chunkSize.value = 3;
+          }
 
+ }
 
 const groupedTestimonials = computed(()=>{
     let result = []
@@ -65,7 +77,9 @@ const groupedTestimonials = computed(()=>{
         result.push(testimonials.slice(i, i + chunkSize.value))
      }
      return result;
-})
+});
+
+ 
 
 const startSlider = ()=>{
         interval = setInterval(()=>{
@@ -81,81 +95,15 @@ const goToSlide = (index)=>{
 }
 
 onMounted(()=>{
+     updateChunkSize();
       startSlider();
+      window.addEventListener("resize", updateChunkSize);
 })
 
 onUnmounted(()=>{
     clearInterval(interval)
+    window.removeEventListener("resize" , updateChunkSize)
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let interval = null;
-
-// const chunkSize = ref(3);
-
-// const updateChunkSize = () => {
-//   if (window.innerWidth < 768) { 
-//     chunkSize.value = 1;
-//   } else if (window.innerWidth < 1024) { 
-//     chunkSize.value = 2;
-//   } else { 
-//     chunkSize.value = 3;
-//   }
-// };
-
-// const groupedTestimonials = computed(() => {
-//   const result = [];
-//   for (let i = 0; i < testimonials.length; i += chunkSize.value) {
-//     result.push(testimonials.slice(i, i + chunkSize.value));
-//   }
-//   return result;
-// });
-
-// const startSlider = () => {
-//   interval = setInterval(() => {
-//     currentIndex.value = (currentIndex.value + 1) % groupedTestimonials.value.length;
-//   }, 4000); 
-// };
-
-// const pauseSlider = () => {
-//   clearInterval(interval);
-// };
-
-// const goToSlide = (index) => {
-//   currentIndex.value = index;
-// };
-
-// onMounted(() => {
-//   updateChunkSize(); 
-//   window.addEventListener("resize", updateChunkSize); 
-//   startSlider();
-// });
-
-// onUnmounted(() => {
-//   clearInterval(interval);
-//   window.removeEventListener("resize", updateChunkSize);
-// });
 </script>
 

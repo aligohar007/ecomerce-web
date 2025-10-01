@@ -15,7 +15,7 @@
         </div>
 
         <!-- Column 2: List 1 -->
-        <div >
+        <div class="lg:ml-20" >
           <h3 class="text-lg font-semibold mb-4 ">Quick Links</h3>
           <ul class="space-y-2 text-sm ">
             <li><a href="#" class="hover:text-gray-300">Home</a></li>
@@ -61,8 +61,10 @@
 .footer-pattern {
   background-image: url('src/assets/footer-pattern.jpg');
   background-size: cover;
-  background-position: center;
+   background-position: bottom;
   background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
   
   /* Full viewport height */
 }
