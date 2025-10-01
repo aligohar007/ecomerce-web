@@ -42,10 +42,7 @@
           <p class="text-sm mb-4">
             Subscribe to our newsletter and stay updated with the latest news and offers.
           </p>
-          <button 
-            class="px-5 py-2 bg-[#fea928] text-white cursor-pointer font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition">
-            Order Now
-          </button>
+          
         </div>
       </div>
 
