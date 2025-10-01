@@ -7,6 +7,7 @@
   <Wintersale/>
   <NewProduct/>
   <Testinomail/>
+  <Footer/>
 </template>
 
 
@@ -19,6 +20,7 @@ import Testinomail from './components/Testinomail.vue';
 import TopHeader from './components/TopHeader.vue';
 import Topratedproducts from './components/Topratedproducts.vue';
 import Wintersale from './components/Wintersale.vue';
+import Footer from './components/Footer.vue';
 
 </script>
 

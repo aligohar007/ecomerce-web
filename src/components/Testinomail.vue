@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="relative w-full max-w-6xl mx-auto overflow-hidden mt-20 mb-20"
+    class="relative w-full max-w-6xl mx-auto overflow-hidden mt-20 lg:mt-40 mb-20 lg:mb-40"
     @mouseenter="pauseSlider"
     @mouseleave="startSlider"
   >
@@ -17,7 +17,7 @@
         <div
           v-for="card in group"
           :key="card.id"
-          class="bg-white p-6 rounded-xl shadow-xl/30 text-center relative"
+          class="bg-[#fea928]/10 p-6 rounded-xl shadow-xl/30 text-center relative"
         >
           <div v-html="card.icon" class="absolute right-3 text-gray-200">
             
@@ -54,37 +54,108 @@ import { ref, onMounted, onUnmounted, computed } from "vue";
 import { testimonials } from "../data/testinomail";
 
 const currentIndex = ref(0);
-let interval = null;
+const chunkSize = ref(3);
+ let interval = null;
 
-// Group testimonials into chunks of 3
-const groupedTestimonials = computed(() => {
-  const chunkSize = 3; // har slide me 3 cards
-  const result = [];
-  for (let i = 0; i < testimonials.length; i += chunkSize) {
-    result.push(testimonials.slice(i, i + chunkSize));
-  }
-  return result;
-});
 
-const startSlider = () => {
-  interval = setInterval(() => {
-    currentIndex.value = (currentIndex.value + 1) % groupedTestimonials.value.length;
-  }, 4000); // 4 seconds
-};
 
-const pauseSlider = () => {
-  clearInterval(interval);
-};
+const groupedTestimonials = computed(()=>{
+    let result = []
+     for(let i  = 0 ; i < testimonials.length; i += chunkSize.value){
+        result.push(testimonials.slice(i, i + chunkSize.value))
+     }
+     return result;
+})
 
-const goToSlide = (index) => {
-  currentIndex.value = index;
-};
+const startSlider = ()=>{
+        interval = setInterval(()=>{
+       currentIndex.value = (currentIndex.value + 1) % groupedTestimonials.value.length;
+        },4000)
+}
+const pauseSlider = ()=>{
+    clearInterval(interval);
+}
 
-onMounted(() => {
-  startSlider();
-});
+const goToSlide = (index)=>{
+   currentIndex.value = index
+}
 
-onUnmounted(() => {
-  clearInterval(interval);
-});
+onMounted(()=>{
+      startSlider();
+})
+
+onUnmounted(()=>{
+    clearInterval(interval)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let interval = null;
+
+// const chunkSize = ref(3);
+
+// const updateChunkSize = () => {
+//   if (window.innerWidth < 768) { 
+//     chunkSize.value = 1;
+//   } else if (window.innerWidth < 1024) { 
+//     chunkSize.value = 2;
+//   } else { 
+//     chunkSize.value = 3;
+//   }
+// };
+
+// const groupedTestimonials = computed(() => {
+//   const result = [];
+//   for (let i = 0; i < testimonials.length; i += chunkSize.value) {
+//     result.push(testimonials.slice(i, i + chunkSize.value));
+//   }
+//   return result;
+// });
+
+// const startSlider = () => {
+//   interval = setInterval(() => {
+//     currentIndex.value = (currentIndex.value + 1) % groupedTestimonials.value.length;
+//   }, 4000); 
+// };
+
+// const pauseSlider = () => {
+//   clearInterval(interval);
+// };
+
+// const goToSlide = (index) => {
+//   currentIndex.value = index;
+// };
+
+// onMounted(() => {
+//   updateChunkSize(); 
+//   window.addEventListener("resize", updateChunkSize); 
+//   startSlider();
+// });
+
+// onUnmounted(() => {
+//   clearInterval(interval);
+//   window.removeEventListener("resize", updateChunkSize);
+// });
 </script>
+
