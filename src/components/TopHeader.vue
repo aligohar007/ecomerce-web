@@ -44,8 +44,8 @@
       </button>
 
       <!-- Dark Mode Toggle -->
-      <button @click="toggleDarkMode" class="p-2 rounded-full text-gray-900 dark:text-white transition">
-        <span v-if="isDark">
+      <button @click="themestore.toggleTheme" class="p-2 rounded-full text-gray-900 dark:text-white transition">
+        <span v-if="themestore.isDark">
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" class="dark:text-white ">
             <path fill="currentColor"
@@ -94,8 +94,9 @@
 <script setup>
 import logoimg from "@/assets/logo.png"
 import { ref, onMounted } from "vue";
+import { useThemeStore } from "../store/theme";
 
-const isDark = ref(false);
+ const themestore = useThemeStore();
 const showOrderForm = ref(false);
 
 const form = ref({
@@ -105,13 +106,8 @@ const form = ref({
 });
 
 onMounted(() => {
-  isDark.value = document.documentElement.classList.contains("dark");
-});
-
-function toggleDarkMode() {
-  isDark.value = !isDark.value;
-  document.documentElement.classList.toggle("dark", isDark.value);
-}
+  themeStore.initTheme()
+})
 
 function submitForm() {
   alert(`Order submitted!\nName: ${form.value.name}\nEmail: ${form.value.email}\nPhone: ${form.value.phone}`);
