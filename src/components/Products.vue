@@ -1,13 +1,14 @@
 <template>
+     <div class="bg-white dark:bg-black p-1">
     <!-- Products header  -->
-    <div class="text-center mt-10 mb-10">
+    <div class="text-center mt-10 mb-10 lg:-mb-10 dark:bg-black dark:text-white">
         <h3 class="text-[#fea928]/40">Top Selling products for you</h3>
         <h1 class="text-[2rem] font-bold">Products</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, suscipit similique delectus dignissimos
             nulla voluptatibus!</p>
     </div>
 
-    <section class="py-3 px-14">
+    <section class="py-3 px-14 dark:bg-black lg:mt-20">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             <ProductsCards v-for="(product, index) in cards" :key="product.id" :card="product" />
         </div>
@@ -18,7 +19,9 @@
             </a>
         </div>
     </section>
+    </div>
 </template>
+
 
 <script setup>
 import { ref } from "vue";

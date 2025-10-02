@@ -1,5 +1,6 @@
 <template>
     <!-- Products header  -->
+      <div class="dark:bg-black dark:text-white p-1">
     <div class="text-center mt-10 mb-10">
         <h3 class="text-[#fea928]/40">Top Rated products for you</h3>
         <h1 class="text-[2rem] font-bold">Best Products</h1>
@@ -14,6 +15,7 @@
 
        
     </section>
+    </div>
 </template>
 
 <script setup>

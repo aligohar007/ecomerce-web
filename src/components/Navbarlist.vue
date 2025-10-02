@@ -1,9 +1,9 @@
 <template>
-  <section>
+  <section >
     <!-- Navbar start -->
-    <div class="w-full text-center flex justify-center   items-center bg-[#fea928]/40 lg:bg-white shadow-xl py-2">
+    <div class="w-full text-center mt-12 flex justify-center dark:bg-black    items-center bg-[#fea928]/40 lg:bg-white shadow-xl py-2">
       <nav class="hidden lg:block  ">
-        <ul class="flex text-black  gap-10 font-semibold">
+        <ul class="flex text-black  gap-10 font-semibold dark:text-white">
           <!-- Main Links -->
           <li
             v-for="(link, index) in navLinks"
@@ -15,7 +15,7 @@
 
               <svg
                 v-if="link.dropdown"
-                class="w-4 h-4 text-black font-semibold transition-transform duration-300 group-hover:rotate-180"
+                class="w-4 h-4 text-black dark:text-white font-semibold transition-transform duration-300 group-hover:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
@@ -28,7 +28,7 @@
             <!-- Dropdown Menu -->
             <ul
               v-if="link.dropdown"
-              class="absolute left-0 top-full mt-4 w-48 bg-white rounded-lg shadow-lg 
+              class="absolute left-0 top-full mt-4 w-48 bg-white dark:bg-black rounded-lg shadow-lg 
               opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
               transition-all duration-300 ease-out z-30"
             >

@@ -1,4 +1,5 @@
 <template>
+    <div class="dark:bg-black dark:text-white dark:p-1 dark:pt-10">
    <div class="text-center">
         <h3 class="text-[#fea928]/40">Top Selling products for you</h3>
         <h1 class="text-[2rem] font-bold mb-5">Testimonial</h1>
@@ -6,7 +7,7 @@
             nulla voluptatibus!</p>
     </div>
   <div 
-    class="relative w-full max-w-[95%] mx-auto overflow-hidden mt-20 lg:mt-20 mb-20 lg:mb-40"
+    class="relative w-full max-w-[95%] mx-auto overflow-hidden mt-20 lg:mt-20 mb-20 lg:mb-40 "
     @mouseenter="pauseSlider"
     @mouseleave="startSlider"
   >
@@ -52,6 +53,7 @@
         @click="goToSlide(index)"
       ></span>
     </div>
+  </div>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative overflow-hidden min-h-[570px] sm:min-h-[670px] lg:min-h-[650px] bg-gray-100 "
+    class="relative overflow-hidden min-h-[570px] sm:min-h-[670px] lg:min-h-[650px] bg-gray-100 dark:bg-black dark:text-white"
   >
     <div
       class="absolute right-0 -top-1/2 w-[500px] h-[500px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px]  bg-[#fea928]/40 rotate-45 rounded-3xl"
