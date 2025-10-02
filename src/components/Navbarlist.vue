@@ -1,7 +1,7 @@
 <template>
   <section >
     <!-- Navbar start -->
-    <div class="w-full text-center mt-12 flex justify-center dark:bg-black    items-center bg-[#fea928]/40 lg:bg-white shadow-xl py-2">
+    <div class="w-full text-center  flex justify-center dark:bg-black    items-center bg-[#fea928]/40 lg:bg-white shadow-xl py-2">
       <nav class="hidden lg:block  ">
         <ul class="flex text-black  gap-10 font-semibold dark:text-white">
           <!-- Main Links -->

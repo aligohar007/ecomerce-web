@@ -1,5 +1,5 @@
 <template>
-     <div class="bg-white dark:bg-black p-1">
+     <div class="bg-white dark:bg-black ">
     <!-- Products header  -->
     <div class="text-center mt-10 mb-10 lg:-mb-10 dark:bg-black dark:text-white">
         <h3 class="text-[#fea928]/40">Top Selling products for you</h3>

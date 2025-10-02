@@ -1,5 +1,5 @@
 <template>
-    <div class="dark:bg-black dark:text-white dark:p-1 dark:pt-10">
+    <div class="dark:bg-black dark:text-white lg:mt-10">
    <div class="text-center">
         <h3 class="text-[#fea928]/40">Top Selling products for you</h3>
         <h1 class="text-[2rem] font-bold mb-5">Testimonial</h1>
@@ -24,7 +24,7 @@
         <div
           v-for="card in group"
           :key="card.id"
-          class="bg-[#fea928]/10 p-6 rounded-xl shadow-xl/30 text-center relative"
+          class="bg-[#fea928]/10 p-6 rounded-xl shadow-xl/30 text-center relative dark:bg-white"
         >
           <div v-html="card.icon" class="absolute right-3 text-gray-200">
             

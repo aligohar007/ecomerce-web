@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed left-0 right-0 top-0 z-50  flex items-center justify-between px-6 lg:px-14 md:px-20 py-2 
+    class="  flex items-center justify-between px-6 lg:px-14 md:px-20 py-2 
       bg-[#fea928]/40 text-black 
          dark:bg-black dark:text-white 
        shadow-lg  transition-colors duration-300">
